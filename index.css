@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-gold: #D4AF37;
+  --color-gold-light: #F9E4B7;
+  --color-dark: #0A0A0A;
+  --color-dark-soft: #141414;
+}
+
+@layer base {
+  body {
+    @apply bg-dark text-white font-sans antialiased scroll-smooth;
+  }
+}
+
+.cinematic-gradient {
+  background: radial-gradient(circle at 50% -20%, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+}
+
+.glass-card {
+  @apply bg-dark-soft/50 backdrop-blur-md border border-white/10;
+}
+
+.gold-text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-gold via-gold-light to-gold;
+}
+
+.nav-link {
+  @apply text-sm uppercase tracking-widest text-white/60 hover:text-gold transition-colors duration-300;
+}
+
+.btn-primary {
+  @apply px-8 py-4 bg-gold text-dark font-bold uppercase tracking-wider rounded-none hover:bg-gold-light transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(212,175,55,0.3)];
+}
+
+.section-title {
+  @apply font-serif text-4xl md:text-5xl mb-6 text-center;
+}
+
+.input-field {
+  @apply w-full bg-white/5 border border-white/10 px-4 py-3 rounded-none focus:outline-none focus:border-gold transition-colors text-white;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #F9E4B7;
+}
